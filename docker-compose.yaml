@@ -1,0 +1,45 @@
+version: '3.8'
+
+services: 
+  web: 
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    container_name: php_apache
+    ports: 
+      - "8090:80"
+    volumes: 
+      - ./app:/var/www/html 
+    depends_on:
+      - db_postgres
+
+  db_postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: userpassword
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+
+  pgadmin4:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: sokolov48228@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "8091:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - db_postgres
+    
+volumes:
+  local_pgdata:
+  pgadmin-data:

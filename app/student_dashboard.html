@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Личный кабинет студента — Академия успеха</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/student_dashboard.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Добро пожаловать, <span id="studentName">...</span></h1>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Главная</a></li>
+        <li><a href="#" onclick="logout()">Выход</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Личные данные</h2>
+    <p>Email: <span id="studentEmail">...</span></p>
+    <p>Филиал: <span id="studentBranch">...</span></p>
+
+    <h2>Мои курсы</h2>
+    <table>
+      <thead>
+        <tr><th>Название курса</th><th>Оценка</th></tr>
+      </thead>
+      <tbody id="studentCourses"></tbody>
+    </table>
+
+    <h2>Расписание</h2>
+    <table>
+      <thead>
+        <tr><th>Курс</th><th>Дата и время</th></tr>
+      </thead>
+      <tbody id="studentSchedule"></tbody>
+    </table>
+
+    <h2>Доступные курсы для записи</h2>
+    <table id="availableCoursesTable">
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th>Описание</th>
+          <th>Цена</th>
+          <th>Действие</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h3>Записаться через выбор курса</h3>
+    <form id="enrollForm">
+      <select id="courseSelect">
+        <option value="">-- Выберите курс --</option>
+      </select>
+      <button type="submit">Записаться</button>
+    </form>
+
+    <div id="enrollMessage" style="margin-top: 10px; font-weight: bold;"></div>
+  </main>
+</body>
+</html>

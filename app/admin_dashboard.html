@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Админ-панель — Академия успеха</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+  <script defer src="js/admin_dashboard.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Админ-панель</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('courses')">Курсы</a></li>
+        <li><a href="#" onclick="showSection('teachers')">Преподаватели</a></li>
+        <li><a href="#" onclick="showSection('students')">Студенты</a></li>
+        <li><a href="#" onclick="showSection('reports')">Отчёты</a></li>
+        <li><a href="#" onclick="logout()">Выход</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="courses" class="admin-section">
+      <h2>Управление курсами</h2>
+      <div id="courseList"></div>
+      <form id="courseForm">
+        <input type="hidden" id="courseId">
+        <input type="text" id="courseName" placeholder="Название курса" required>
+        <textarea id="courseDescription" placeholder="Описание"></textarea>
+        <input type="number" id="coursePrice" placeholder="Цена">
+        <button type="submit">Сохранить</button>
+      </form>
+    </section>
+
+   <section id="teachers" class="admin-section" style="display:none;">
+    <h2>Преподаватели</h2>
+    <div id="teacherList"></div>
+        <form id="teacherForm">
+            <input type="hidden" id="teacherId">
+            <input type="text" id="teacherName" placeholder="ФИО" required>
+            <input type="email" id="teacherEmail" placeholder="Email" required>
+            <input type="password" id="teacherPassword" placeholder="Пароль">
+            <button type="submit">Сохранить</button>
+        </form>
+    </section>
+
+
+    <section id="students" class="admin-section" style="display:none;">
+    <h2>Студенты</h2>
+    <div id="studentList"></div>
+        <form id="studentForm">
+            <input type="hidden" id="studentId">
+            <input type="text" id="studentName" placeholder="ФИО" required>
+            <input type="email" id="studentEmail" placeholder="Email" required>
+            <input type="password" id="studentPassword" placeholder="Пароль">
+            <button type="submit">Сохранить</button>
+        </form>
+    </section>
+
+
+    <section id="reports" class="admin-section" style="display:none;">
+      <h2>Отчёты</h2>
+      <div id="reportContent">ckoro</div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание - Академия успеха</title>
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+    <script defer src="js/utils.js"></script>
+    <script defer src="js/script.js"></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Академия успеха</h1>
+            <nav id="menu">
+                <ul>
+                    <li><a href="dashboard.html">Главная</a></li>
+                    <li><a href="courses.html" class="active">Курсы</a></li>
+                    <li><a href="students.html">Студенты</a></li>
+                    <li><a href="teachers.html">Преподаватели</a></li>
+                    <li><a href="schedule.html">Расписание</a></li>
+                    <li><a href="reports.html">Отчёты</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                    <li id="userDashboardLink" style="display:none;">
+                    <a href="#" id="dashboardLink">Личный кабинет</a>
+                    </li>
+                    <li><a href="#" onclick="logout()">Выход</a></li>
+                </ul>
+            </nav>
+
+    </header>
+
+    <main>
+        <section id="schedule" class="section active">
+            <h2>Расписание</h2>
+            <div id="calendar"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отчёты - Академия успеха</title>
+  <link rel="stylesheet" href="css/style.css?v=2.0">
+  <style>
+    #reportResult {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+        <h1>Академия успеха</h1>
+            <nav id="menu">
+                <ul>
+                    <li><a href="dashboard.html">Главная</a></li>
+                    <li><a href="courses.html" class="active">Курсы</a></li>
+                    <li><a href="students.html">Студенты</a></li>
+                    <li><a href="teachers.html">Преподаватели</a></li>
+                    <li><a href="schedule.html">Расписание</a></li>
+                    <li><a href="reports.html">Отчёты</a></li>
+                    <li><a href="admin.html">Админ-панель</a></li>
+                    <li id="userDashboardLink" style="display:none;">
+                    <a href="#" id="dashboardLink">Личный кабинет</a>
+                    </li>
+                    <li><a href="#" onclick="logout()">Выход</a></li>
+                </ul>
+            </nav>
+
+    </header>
+
+  <main>
+    <section id="reports" class="section active">
+      <h2>Отчёты</h2>
+      <form id="reportForm">
+        <label for="reportType">Тип отчета:</label>
+        <select id="reportType">
+          <option value="popularCourses">Популярные курсы</option>
+          <option value="branchStats">Статистика по филиалам</option>
+          <option value="studentPerformance">Успеваемость студентов</option>
+          <option value="financialReport">Финансовые показатели</option>
+          <option value="registrationDynamics">Динамика регистраций</option>
+        </select>
+        <button type="submit">Сформировать</button>
+      </form>
+      <div id="reportResult"></div>
+    </section>
+  </main>
+
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/script.js"></script>
+  <script defer src="js/reports.js"></script>
+</body>
+</html>
